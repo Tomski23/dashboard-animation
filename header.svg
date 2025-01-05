@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100">
+    <!-- Gradient Background -->
+    <defs>
+        <linearGradient id="custom-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#155200;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#8DB88B;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#C9E0CA;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <!-- Background Rectangle -->
+    <rect width="800" height="100" fill="url(#custom-gradient)" />
+
+    <!-- Header Text -->
+    <text x="50%" y="40" font-family="Roboto, sans-serif" font-size="28" fill="#FFFFFF" dominant-baseline="middle" text-anchor="middle">
+        DASHBOARDS
+    </text>
+
+    <!-- Dynamic Panels -->
+    <rect x="-200" y="60" width="200" height="30" fill="#FFFFFF" rx="5">
+        <animate attributeName="x" from="-200" to="800" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="800" y="60" width="200" height="30" fill="#8DB88B" rx="5">
+        <animate attributeName="x" from="800" to="-200" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="300" y="60" width="200" height="30" fill="#C9E0CA" rx="5">
+        <animate attributeName="x" from="300" to="800" dur="4s" repeatCount="indefinite" />
+    </rect>
+</svg>
