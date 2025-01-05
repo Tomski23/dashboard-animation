@@ -1,28 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="40" viewBox="0 0 800 40">
     <!-- Gradient Background -->
     <defs>
-        <linearGradient id="custom-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id="dashboard-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:#155200;stop-opacity:1" />
             <stop offset="50%" style="stop-color:#8DB88B;stop-opacity:1" />
             <stop offset="100%" style="stop-color:#C9E0CA;stop-opacity:1" />
         </linearGradient>
-    </defs>
-    <!-- Background Rectangle -->
-    <rect width="800" height="100" fill="url(#custom-gradient)" />
 
-    <!-- Header Text -->
-    <text x="50%" y="40" font-family="Roboto, sans-serif" font-size="28" fill="#FFFFFF" dominant-baseline="middle" text-anchor="middle">
+        <!-- Glowing Panel Effect -->
+        <radialGradient id="glow-gradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+        </radialGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="800" height="40" fill="url(#dashboard-gradient)" />
+
+    <!-- Header Text: DASHBOARDS -->
+    <text x="50%" y="25" font-family="Roboto, sans-serif" font-size="16" fill="#FFFFFF" font-weight="bold" dominant-baseline="middle" text-anchor="middle">
         DASHBOARDS
     </text>
 
     <!-- Dynamic Panels -->
-    <rect x="-200" y="60" width="200" height="30" fill="#FFFFFF" rx="5">
-        <animate attributeName="x" from="-200" to="800" dur="4s" repeatCount="indefinite" />
+    <!-- Panel 1 -->
+    <rect x="-200" y="20" width="200" height="15" fill="url(#glow-gradient)" rx="5">
+        <animate attributeName="x" from="-200" to="800" dur="5s" repeatCount="indefinite" />
     </rect>
-    <rect x="800" y="60" width="200" height="30" fill="#8DB88B" rx="5">
-        <animate attributeName="x" from="800" to="-200" dur="4s" repeatCount="indefinite" />
+    <!-- Panel 2 -->
+    <rect x="800" y="20" width="200" height="15" fill="#8DB88B" rx="5">
+        <animate attributeName="x" from="800" to="-200" dur="5s" repeatCount="indefinite" />
     </rect>
-    <rect x="300" y="60" width="200" height="30" fill="#C9E0CA" rx="5">
-        <animate attributeName="x" from="300" to="800" dur="4s" repeatCount="indefinite" />
+    <!-- Panel 3 -->
+    <rect x="300" y="20" width="200" height="15" fill="#C9E0CA" rx="5">
+        <animate attributeName="x" from="300" to="800" dur="5s" repeatCount="indefinite" />
     </rect>
+
+    <!-- Floating Nodes (Symbolizing Data Points) -->
+    <!-- Node 1 -->
+    <circle cx="100" cy="10" r="4" fill="#FFFFFF">
+        <animate attributeName="cy" values="10;5;10" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 2 -->
+    <circle cx="400" cy="10" r="4" fill="#8DB88B">
+        <animate attributeName="cy" values="10;5;10" dur="3s" repeatCount="indefinite" begin="1s" />
+    </circle>
+    <!-- Node 3 -->
+    <circle cx="700" cy="10" r="4" fill="#C9E0CA">
+        <animate attributeName="cy" values="10;5;10" dur="3s" repeatCount="indefinite" begin="2s" />
+    </circle>
+
+    <!-- Horizontal Flow Line -->
+    <line x1="0" y1="30" x2="800" y2="30" stroke="#FFFFFF" stroke-width="0.5">
+        <animate attributeName="stroke-dasharray" values="10,5;5,5" dur="2s" repeatCount="indefinite" />
+    </line>
 </svg>
